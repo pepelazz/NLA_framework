@@ -14,7 +14,7 @@ func WriteProjectFiles(p types.ProjectType, tmplMap map[string]*template.Templat
 		if strings.HasPrefix(name, "project_") {
 			filename := strings.TrimPrefix(name, "project_")
 			path := ".."
-			if filename == "config.toml" || filename == "main.go" {
+			if filename == "config.toml" || filename == "main.go" || filename == "go.mod" || filename == "go.sum" {
 				path = "../src"
 			}
 			err := ExecuteToFile(t, p, path, filename)
